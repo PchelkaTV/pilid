@@ -1,0 +1,311 @@
+/* Общие стили */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom right, #1a1a1a, #333);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+/* Заголовки */
+h1, h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Кнопки */
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #3e8e41;
+  transform: scale(1.05);
+}
+
+#playersList {
+  margin-bottom: 20px;
+}
+
+/* Блок добавления игроков */
+.playerInput {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.playerInput input[type="text"] {
+  flex: 2;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  background: white;
+  color: black;
+}
+
+.playerInput .genderSelect, .playerInput .orientationSelect {
+  flex: 1;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  background: white;
+  color: black;
+}
+
+.playerInput .deletePlayerBtn {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.playerInput .deletePlayerBtn:hover {
+  background-color: #c9302c;
+  transform: scale(1.1);
+}
+
+/* Стили для выбора игроков */
+label {
+  display: block;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Центрирование кнопок */
+.buttons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Вопросы */
+#question {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 20px;
+  min-height: 50px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  color: #fff;
+}
+
+/* Кнопка "Назад в меню" */
+.back-to-menu {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+  }
+
+  .btn {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+
+  .playerInput input[type="text"],
+  .playerInput select {
+    font-size: 14px;
+  }
+
+  #question {
+    font-size: 18px;
+  }
+
+  .back-to-menu {
+    top: 5px;
+    left: 5px;
+  }
+}
+
+/* Лента игроков */
+#playerCarousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.player {
+  font-size: 18px;
+  opacity: 0.5;
+  transition: opacity 0.3s ease, font-size 0.3s ease;
+  color: #fff;
+}
+
+.player.active {
+  font-size: 32px;
+  opacity: 1;
+}
+
+.player.previous, .player.next {
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+/* Стили для иконок */
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 67px;
+  height: 40px;
+  fill: white;
+  transition: fill 0.3s ease;
+}
+
+.icon-btn:hover .icon {
+  fill: #4CAF50;
+}
+
+/* Стили для автора */
+.author {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 12px;
+  color: #fff;
+}
+
+.author a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.author a:hover {
+  text-decoration: underline;
+}
+
+/* Стили для кнопки настроек */
+.settings-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Модальное окно */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  color: #fff;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.theme-options {
+  margin-bottom: 20px;
+}
+
+.preset-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.preset {
+  width: 100%;
+  padding-top: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.preset:hover {
+  border-color: #4CAF50;
+}
+
+.preset-colors {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.preset-color {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.preset-color:hover {
+  border-color: #4CAF50;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Правда или Действие</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="img/icon_brauzer.jpg" type="image/x-icon">
+</head>
+<body>
+  <div class="container">
+    <div id="menu">
+      <h1>Правда или Действие</h1>
+      <div id="playersList"></div>
+      <button id="addPlayerBtn" class="icon-btn">
+        <img src="img/add.svg" alt="Добавить" class="icon">
+      </button>
+      <label for="playerOrder">Порядок игроков:</label>
+      <select id="playerOrder">
+        <option value="random">Случайно</option>
+        <option value="order">По очереди</option>
+      </select>
+      <button id="startGameBtn" class="btn center-btn">Играть!</button>
+    </div>
+
+    <div id="game" style="display: none;">
+      <button id="backToMenuBtn" class="icon-btn back-btn">
+        <img src="img/home.svg" alt="В меню" class="icon">
+      </button>
+      <div id="playerCarousel"></div>
+      <div class="buttons">
+        <button id="truthBtn" class="btn">Правда</button>
+        <button id="actionBtn" class="btn">Действие</button>
+      </div>
+      <p id="question"></p>
+      <button id="skipBtn" class="btn">Пропустить</button>
+      <button id="nextPlayerBtn" class="btn" style="display: none;">Далее</button>
+    </div>
+    <div class="author">
+      <a href="https://t.me/PchelLive" target="_blank">by: Pchelka_TV</a>
+    </div>
+  </div>
+
+  <script src="questionsDB.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
